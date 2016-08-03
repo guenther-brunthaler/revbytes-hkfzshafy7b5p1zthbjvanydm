@@ -112,7 +112,7 @@ int main(int argc, char **argv) {
             goto output_error_w_buf;
          }
          if (seekable) {
-             if (!fseek(stdin, -(long)buffer_size, SEEK_CUR)) {
+             if (fseek(stdin, -(long)buffer_size, SEEK_CUR)) {
                 goto seek_error_w_buf;
              }
          } else {
