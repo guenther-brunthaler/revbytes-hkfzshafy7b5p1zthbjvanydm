@@ -30,7 +30,7 @@ static char const *const help=
    "and load it into memory completely. In this case, the size of the input\n"
    "stream is restricted to the internal buffer size and larger streams\n"
    "will result in an error message. The internal buffer size is 4 MiB by\n"
-   "default, but can become as small as 4 KiB if not enough memory is\n"
+   "default, but can become as small as 64 KiB if not enough memory is\n"
    "available. Nevertheless, under normal circumstances it will be large\n"
    "enough for processing most typical application document sizes. If in\n"
    "doubt, make sure the input to $APPLICATION_NAME is a seekable file or\n"
@@ -62,7 +62,7 @@ static char const *const help=
 #endif
 
 
-#define MIN_BUFFER_SIZE 4ul * 1024
+#define MIN_BUFFER_SIZE 64ul * 1024
 #define MAX_BUFFER_SIZE 4ul * 1024 * 1024
 
 
